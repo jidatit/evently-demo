@@ -1,0 +1,70 @@
+
+project_id = "ivleppusmoihvnayjzwe"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[auth]
+enabled = true
+port = 54324
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://ivleppusmoihvnayjzwe.supabase.co"]
+jwt_expiry = 3600
+jwt_secret = "super-secret-jwt-token-with-at-least-32-characters-long"
+enable_signup = true
+email_double_confirm_changes = true
+enable_anonymous_sign_ins = false
+enable_confirmations = true
+
+# Enhanced security settings
+password_min_length = 12
+external_email_enabled = true
+external_phone_enabled = false
+external_sms_enabled = false
+
+# Rate limiting - enhanced
+max_frequency = "3 per minute"
+max_frequency_anonymous = "2 per minute"
+
+# Session security - enhanced
+session_timeout = "4 hours"
+password_complexity = "strong"
+
+# OTP security - FIXED: Reduced from 180 to 300 seconds (5 minutes) for better security
+otp_exp = 300  # 5 minutes - improved security while maintaining usability
+otp_length = 6
+
+# Enable leaked password protection
+enable_leaked_password_protection = true
+
+# SMTP settings for secure email delivery
+smtp_admin_email = "admin@yourdomain.com"
+smtp_host = "smtp.resend.com"
+smtp_port = 587
+smtp_user = "resend"
+smtp_max_frequency = "5 per hour"
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+secure_email_change_enabled = true
+secure_password_change_enabled = true
+
+[auth.sessions]
+timebox = "4h"
+inactivity_timeout = "4h"
+
+# Enhanced security for admin functions
+[functions.generate-invoice]
+verify_jwt = true
+
+[functions.set-admin]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true

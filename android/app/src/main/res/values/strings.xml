@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">bookd-event-hub</string>
+    <string name="title_activity_main">bookd-event-hub</string>
+    <string name="package_name">app.lovable.c4d4d9deae824396add0ba85b0b2cc68</string>
+    <string name="custom_url_scheme">app.lovable.c4d4d9deae824396add0ba85b0b2cc68</string>
+</resources>

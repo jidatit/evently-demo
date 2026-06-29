@@ -15,7 +15,8 @@ import { ConsolidatedAuthProvider } from "@/components/ConsolidatedAuthProvider"
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 // Pages
-import Index from "./pages/Index";
+import EntryScreen from "./pages/EntryScreen";
+// import Index from "./pages/Index";
 import { VerifyEmail } from "./pages/VerifyEmail";
 import Browse from "./pages/Browse";
 import { BrowseVendors } from "./pages/BrowseVendors";
@@ -90,11 +91,12 @@ function App() {
             <BrowserRouter>
               <Routes>
                 {/* Public Routes */}
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<EntryScreen />} />
+                {/* <Route path="/" element={<Index />} /> */}
                 <Route path="/verify-email" element={<VerifyEmail />} />
-                <Route path="/browse" element={<Browse />} />
+                {/* <Route path="/browse" element={<Browse />} /> */}
                 {/* <Route path="/browse-vendors" element={<BrowseVendors />} /> */}
-                <Route path="/how-it-works" element={<HowItWorks />} />
+                {/* <Route path="/how-it-works" element={<HowItWorks />} /> */}
                 {/* <Route path="/pricing" element={<PricingPage />} /> */}
                 {/* <Route path="/terms" element={<Terms />} /> */}
                 <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -104,12 +106,11 @@ function App() {
                 {/* <Route path="/reset-password" element={<ResetPasswordPage />} />
                  */}
                 {/* <Route path="/advanced-vendor-search" element={<AdvancedVendorSearch />} /> */}
-                <Route path="/vendor-landing" element={<VendorLanding />} />
+                {/* <Route path="/vendor-landing" element={<VendorLanding />} /> */}
 
                 {/* Public Vendor Auth (combined login/signup) */}
-                <Route path="/become-vendor" element={<BecomeVendor />} />
-                {/* Optional: keep old login as redirect or remove */}
-                <Route path="/vendor-login" element={<VendorLogin />} />
+                {/* <Route path="/become-vendor" element={<BecomeVendor />} /> */}
+                {/* <Route path="/vendor-login" element={<VendorLogin />} /> */}
 
                 {/* Customer Flow (public or lightly protected) */}
                 {/* <Route path="/customer-booking-flow" element={<CustomerBookingFlow />} /> */}

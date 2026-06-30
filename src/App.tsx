@@ -94,7 +94,7 @@ function App() {
                 <Route path="/" element={<EntryScreen />} />
                 {/* <Route path="/" element={<Index />} /> */}
                 <Route path="/verify-email" element={<VerifyEmail />} />
-                {/* <Route path="/browse" element={<Browse />} /> */}
+                <Route path="/browse" element={<Browse />} />
                 {/* <Route path="/browse-vendors" element={<BrowseVendors />} /> */}
                 {/* <Route path="/how-it-works" element={<HowItWorks />} /> */}
                 {/* <Route path="/pricing" element={<PricingPage />} /> */}

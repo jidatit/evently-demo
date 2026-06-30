@@ -179,20 +179,20 @@ const EntryScreen: React.FC = () => {
   const selectedRoleConfig = ROLES.find((r) => r.id === selectedRole)!;
 
   return (
-    <div className="min-h-[100dvh] w-full max-w-full overflow-x-hidden flex flex-col lg:flex-row lg:min-h-screen">
+    <div className="flex w-full max-w-full overflow-x-hidden min-h-[100dvh] flex-col lg:h-screen lg:max-h-screen lg:overflow-hidden lg:flex-row">
       {/* Left — info slider (below auth on mobile) */}
-      <section className="order-2 lg:order-1 relative flex flex-col bg-primary text-primary-foreground w-full lg:w-[44%] xl:w-[42%] lg:shrink-0 overflow-hidden lg:min-h-screen lg:sticky lg:top-0 lg:self-start">
+      <section className="order-2 lg:order-1 relative flex flex-col bg-primary text-primary-foreground w-full lg:w-[44%] xl:w-[42%] lg:h-full lg:shrink-0 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 -right-24 w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-party-coral/20 blur-3xl" />
           <div className="absolute top-1/2 right-1/4 w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-party-yellow/10 blur-2xl" />
         </div>
 
-        <div className="relative z-10 px-4 pt-5 sm:px-8 sm:pt-8 lg:px-14 lg:pt-12 hidden lg:block">
-          <BookDLogo size="lg" className="[&_*]:text-white [&_.text-primary]:text-white" />
+        <div className="relative z-10 px-4 pt-5 sm:px-8 sm:pt-8 lg:px-10 lg:pt-8 xl:px-14 xl:pt-10 hidden lg:block shrink-0">
+          <BookDLogo size="md" className="[&_*]:text-white [&_.text-primary]:text-white" />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col justify-center px-4 py-5 sm:px-8 sm:py-8 lg:px-14 lg:py-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center min-h-0 px-4 py-5 sm:px-8 sm:py-8 lg:px-10 lg:py-4 xl:px-14">
           <p className="lg:hidden text-xs font-heading font-semibold uppercase tracking-wider text-primary-foreground/70 mb-3">
             About Evently
           </p>
@@ -206,18 +206,18 @@ const EntryScreen: React.FC = () => {
               {SLIDES.map(({ icon: Icon, title, description, highlights }) => (
                 <CarouselItem key={title} className="pl-0 basis-full">
                   <div className="pr-1 sm:pr-2 select-none">
-                    <div className="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-white/15 mb-3 sm:mb-6">
-                      <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 lg:h-11 lg:w-11 items-center justify-center rounded-xl bg-white/15 mb-2 sm:mb-4 lg:mb-3">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
-                    <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight mb-2 sm:mb-4">
+                    <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-2 sm:mb-3 lg:mb-2">
                       {title}
                     </h1>
-                    <p className="text-primary-foreground/85 text-sm sm:text-base lg:text-lg leading-relaxed mb-3 sm:mb-6 line-clamp-3 sm:line-clamp-none">
+                    <p className="text-primary-foreground/85 text-sm sm:text-base lg:text-sm xl:text-base leading-relaxed mb-3 sm:mb-5 lg:mb-3 line-clamp-3 sm:line-clamp-none lg:line-clamp-2 xl:line-clamp-none">
                       {description}
                     </p>
-                    <ul className="hidden sm:block space-y-2 sm:space-y-2.5">
+                    <ul className="hidden sm:block space-y-1.5 lg:space-y-1 xl:space-y-2">
                       {highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-2.5 text-sm sm:text-base">
+                        <li key={item} className="flex items-center gap-2 text-sm lg:text-[13px] xl:text-sm">
                           <Heart className="h-4 w-4 shrink-0 text-party-yellow fill-party-yellow/30" />
                           <span className="text-primary-foreground/90">{item}</span>
                         </li>
@@ -229,7 +229,7 @@ const EntryScreen: React.FC = () => {
             </CarouselContent>
           </Carousel>
 
-          <div className="flex items-center justify-between mt-4 sm:mt-8 max-w-lg mx-auto lg:mx-0 w-full gap-3">
+          <div className="flex items-center justify-between mt-4 sm:mt-6 lg:mt-4 max-w-lg mx-auto lg:mx-0 w-full gap-3 shrink-0">
             <div className="flex items-center gap-1.5 sm:gap-2">
               {SLIDES.map((_, index) => (
                 <button
@@ -265,23 +265,23 @@ const EntryScreen: React.FC = () => {
           </div>
         </div>
 
-        <p className="relative z-10 hidden sm:block px-4 pb-5 sm:px-8 sm:pb-8 lg:px-14 lg:pb-10 text-primary-foreground/60 text-xs sm:text-sm">
+        <p className="relative z-10 hidden sm:block shrink-0 px-4 pb-5 sm:px-8 sm:pb-6 lg:px-10 lg:pb-6 xl:px-14 xl:pb-8 text-primary-foreground/60 text-xs sm:text-sm">
           Swipe or use arrows to learn more about Evently.
         </p>
       </section>
 
       {/* Right — auth form + quick access (first on mobile) */}
-      <section className="order-1 lg:order-2 flex-1 flex flex-col justify-start lg:justify-center bg-party-cream px-4 py-6 sm:px-8 sm:py-10 lg:px-16 lg:py-10 min-w-0 lg:overflow-y-auto">
-        <div className="w-full max-w-md mx-auto min-w-0">
-          <div className="flex items-center justify-between gap-3 mb-5 sm:mb-6 lg:hidden">
+      <section className="order-1 lg:order-2 flex-1 flex flex-col justify-start lg:justify-center bg-party-cream px-4 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-6 xl:px-16 xl:py-8 min-w-0 lg:h-full lg:overflow-y-auto lg:overscroll-contain">
+        <div className="w-full max-w-md mx-auto min-w-0 lg:py-1">
+          <div className="flex items-center justify-between gap-3 mb-4 sm:mb-6 lg:hidden">
             <BookDLogo size="sm" />
           </div>
 
-          <div className="mb-5 sm:mb-6">
-            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-1">
+          <div className="mb-4 sm:mb-5 lg:mb-4">
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold text-foreground mb-1">
               {authMode === 'signin' ? 'Welcome back' : 'Create your account'}
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
+            <p className="text-muted-foreground text-sm sm:text-base lg:text-sm xl:text-base">
               {authMode === 'signin'
                 ? 'Sign in to access your Evently dashboard.'
                 : 'Join Evently and start planning or selling today.'}
@@ -289,14 +289,14 @@ const EntryScreen: React.FC = () => {
           </div>
 
           {/* Sign in / Sign up toggle */}
-          <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-muted mb-4 sm:mb-5">
+          <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-muted mb-3 sm:mb-4 lg:mb-3">
             {(['signin', 'signup'] as const).map((mode) => (
               <button
                 key={mode}
                 type="button"
                 onClick={() => setAuthMode(mode)}
                 className={cn(
-                  'rounded-lg py-2.5 sm:py-3 text-sm font-heading font-semibold transition-all touch-manipulation min-h-[44px]',
+                  'rounded-lg py-2 sm:py-2.5 lg:py-2 text-sm font-heading font-semibold transition-all touch-manipulation min-h-[44px] lg:min-h-[40px]',
                   authMode === mode
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground hover:text-foreground',
@@ -308,14 +308,14 @@ const EntryScreen: React.FC = () => {
           </div>
 
           {/* Role selector */}
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-4 sm:mb-5">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-3 sm:mb-4 lg:mb-3">
             {ROLES.map(({ id, label, tabActive }) => (
               <button
                 key={id}
                 type="button"
                 onClick={() => setSelectedRole(id)}
                 className={cn(
-                  'rounded-xl border-2 py-2.5 px-1.5 sm:px-2 text-[11px] sm:text-sm font-heading font-semibold transition-all touch-manipulation min-h-[44px]',
+                  'rounded-xl border-2 py-2 sm:py-2.5 lg:py-2 px-1.5 sm:px-2 text-[11px] sm:text-sm font-heading font-semibold transition-all touch-manipulation min-h-[44px] lg:min-h-[40px]',
                   selectedRole === id
                     ? tabActive
                     : 'border-border bg-background text-muted-foreground hover:border-primary/30',
@@ -326,7 +326,7 @@ const EntryScreen: React.FC = () => {
             ))}
           </div>
 
-          <form onSubmit={(e) => void handleFormSubmit(e)} className="space-y-4">
+          <form onSubmit={(e) => void handleFormSubmit(e)} className="space-y-3 sm:space-y-4 lg:space-y-3">
             {authMode === 'signup' && selectedRole !== 'admin' && (
               <div className="space-y-1.5">
                 <Label htmlFor="name">Full Name</Label>
@@ -392,7 +392,7 @@ const EntryScreen: React.FC = () => {
             <Button
               type="submit"
               disabled={isBusy || (authMode === 'signup' && selectedRole === 'admin')}
-              className="w-full rounded-full h-11 sm:h-12 font-cta shadow-party hover:shadow-party-hover touch-manipulation"
+              className="w-full rounded-full h-11 lg:h-10 xl:h-11 font-cta shadow-party hover:shadow-party-hover touch-manipulation"
             >
               {formLoading ? (
                 <>
@@ -415,8 +415,8 @@ const EntryScreen: React.FC = () => {
           </form>
 
           {/* Demo quick access */}
-          <div className="mt-6 sm:mt-8 pb-[env(safe-area-inset-bottom)]">
-            <div className="relative mb-5">
+          <div className="mt-5 sm:mt-6 lg:mt-4 pb-[env(safe-area-inset-bottom)]">
+            <div className="relative mb-4 lg:mb-3">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-border" />
               </div>
@@ -437,7 +437,7 @@ const EntryScreen: React.FC = () => {
                     disabled={isBusy}
                     onClick={() => void handleQuickLogin(id, dashboard)}
                     className={cn(
-                      'flex flex-col items-center justify-center gap-1.5 sm:gap-2 rounded-xl border-2 p-2.5 sm:p-3 transition-all min-h-[72px] sm:min-h-0',
+                      'flex flex-col items-center justify-center gap-1.5 rounded-xl border-2 p-2 sm:p-2.5 lg:p-2 transition-all min-h-[72px] sm:min-h-0 lg:min-h-[64px]',
                       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
                       'disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation active:scale-[0.98]',
                       quickAccent,
@@ -458,14 +458,14 @@ const EntryScreen: React.FC = () => {
               })}
             </div>
 
-            <div className="mt-4 sm:mt-5 space-y-2 text-center text-[11px] sm:text-xs text-muted-foreground break-words">
+            <div className="mt-3 sm:mt-4 lg:mt-3 space-y-1.5 text-center text-[11px] sm:text-xs text-muted-foreground break-words">
               <p>
                 Demo:{' '}
                 <span className="font-mono break-all">customer@evently.demo</span>
                 {' / '}
                 <span className="font-mono">Demo1234!</span>
               </p>
-              <p className="hidden sm:block">
+              <p className="hidden xl:block">
                 Press{' '}
                 <kbd className="rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px]">
                   Ctrl+Shift+R

@@ -46,7 +46,7 @@ export const ResponsiveNavigation: React.FC = () => {
                 {item.name}
               </Link>
             ))}
-            
+
             {user ? (
               <Button
                 onClick={logout}
@@ -98,7 +98,7 @@ export const ResponsiveNavigation: React.FC = () => {
                 {item.name}
               </Link>
             ))}
-            
+
             {user ? (
               <div className="px-3 py-2 border-t">
                 <Button

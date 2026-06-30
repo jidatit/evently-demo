@@ -100,7 +100,7 @@ export const FavoritesList: React.FC = () => {
             <h3 className="text-xl font-semibold text-gray-600 mb-2">No favorites yet</h3>
             <p className="text-gray-500 mb-4">Start browsing vendors and save your favorites!</p>
             <Button
-              onClick={() => window.location.href = '/browse-vendors'}
+              onClick={() => window.location.href = '/browse'}
               className="bg-primary hover:bg-primary/90"
             >
               Browse Vendors
